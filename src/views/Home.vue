@@ -1,18 +1,32 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div>
+    <h1 class="subtitle has-text-centered">Click bellow to start the quiz!</h1>
+    <router-link to="/quiz">
+      <div @click="start" @mouseenter="isMouseOver = true" @mouseleave="isMouseOver = false" class="notification has-text-centered" :class="hoverClass"><h1 class="title">Play Quiz</h1></div>
+    </router-link>
   </div>
 </template>
-
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+  import {RESET_ANSWERS_ACTION} from "../store";
+  import {mapActions} from 'vuex';
 
-export default {
-  name: "Home",
-  components: {
-    HelloWorld
+  export default {
+    name: 'Home',
+    data() {
+      return {
+        isMouseOver: false
+      }
+    },
+    computed: {
+      hoverClass: function() {
+        return this.isMouseOver ? 'is-danger' : 'is-primary'
+      }
+    },
+    methods: {
+      start() {
+        this.reset()
+      },
+      ...mapActions({reset: RESET_ANSWERS_ACTION})
+    }
   }
-};
 </script>
