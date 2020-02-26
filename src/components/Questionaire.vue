@@ -20,8 +20,8 @@
           </table>
         </div>
         <div class="card-footer">
-          <a @click="previous" class="card-footer-item">Previous</a>
-          <a @click="next" class="card-footer-item">Next</a>
+          <a @click="previous" class="card-footer-item">&lt;&lt;&lt; Previous</a>
+          <a @click="next" class="card-footer-item">Next >>></a>
         </div>
       </div>
     </div>

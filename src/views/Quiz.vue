@@ -41,13 +41,13 @@ export default {
   },
   methods: {
     onPrev: function() {
-      this.enterActiveClass = 'animated bounceInLeft'
-      this.leaveActiveClass = 'animated bounceOutRight'
+      this.enterActiveClass = 'animated bounceInLeft fast'
+      this.leaveActiveClass = 'animated bounceOutRight fast'
       this.questionIndex = this.questionIndex == 0 ? this.questionIndex : this.questionIndex - 1
     },
     onNext: function() {
-      this.enterActiveClass = 'animated bounceInRight'
-      this.leaveActiveClass = 'animated bounceOutLeft'
+      this.enterActiveClass = 'animated bounceInRight fast'
+      this.leaveActiveClass = 'animated bounceOutLeft fast'
       this.questionIndex = this.questionIndex == (this.numberOfQuestions - 1) ? this.questionIndex : this.questionIndex + 1
     },
     onSelected: function(index) {
